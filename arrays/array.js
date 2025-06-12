@@ -17,5 +17,11 @@ n. Suma de las resistencias en serie
 
 function sumOfResistors(resistorsArray){
     const resistorAbs=resistorsArray.map((resistor)=>Math.abs(resistor));
+    const totalResistance=resistorAbs.reduce((total,current)=>total+current);
+    return `La resistencia total es de ${totalResistance} ohms`
 }
-sumOfResistors([-1,5,-6,3,-9]);
+
+console.log(sumOfResistors([-1,5,-6,3,-9]));
+console.log(sumOfResistors([-1,5,6,3]));
+console.log(sumOfResistors([14,3.5,6]));
+console.log(sumOfResistors([8,15,100]));
