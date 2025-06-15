@@ -7,7 +7,7 @@ Examples:
 */
 
 const number=17
-const length=6
+const lengthM=6
 function multiplos(a,b){
     const arrayMultiplos = [];
 for (let i = 1; i<=b; i++) {
@@ -15,5 +15,5 @@ for (let i = 1; i<=b; i++) {
     }
     return arrayMultiplos
 }
-console.log(`Los primeros ${length} múltiplos del número ${number} son ${multiplos(number,length)}`);
+console.log(`Los primeros ${length} múltiplos del número ${number} son ${multiplos(number,lengthM)}`);
 

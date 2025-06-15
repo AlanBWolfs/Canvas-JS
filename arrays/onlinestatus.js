@@ -3,9 +3,11 @@ Example:
 - `onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer'])` should return `'mockIng99, J0eyPunch and 1 more online'`.
 */
 
-let shown=2; //! Número de nombres de usuario a mostrar
+//! Número de nombres de usuario a mostrar
+let shown=2; 
 
-const users=['mockIng99', 'J0eyPunch', 'glassedFer','Fabry','Mariana','Carlos','Alberto','Patito']; //! Array de usuarios
+//! Array de usuarios
+const users=['mockIng99', 'J0eyPunch', 'glassedFer','Fabry','Mariana','Carlos','Alberto','Patito']; 
 const summarized=(users.length)-shown;
 
 function onlineStatus(shown){

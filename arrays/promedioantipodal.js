@@ -31,7 +31,7 @@ function funcionAntipodal(arrayToAvg) {
     }
     
     //*Declaración de segundo subArray para promediar
-    let subArray2 = [];
+    const subArray2 = [];
     for (let i = largoSubArray; i<=largoSubArray*2-1; i++) {
         subArray2.unshift(arrayAntipodal[i]);
     }
