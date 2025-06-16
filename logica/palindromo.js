@@ -10,7 +10,6 @@ let palindromoA = palindrome.toUpperCase()
 palindromoA=palindromoA.normalize("NFD")                     // Separa las letras de sus tildes
 palindromoA=palindromoA.replace(/[\u0300-\u036f]/g, "")     // Elimina los signos diacríticos
 palindromoA=palindromoA.replace(/[^a-zA-Z]/g, "")
-console.log(palindromoA);
 
 let palindromoArray = Array.from(palindromoA);
 const arrayComparacion = [];
@@ -24,14 +23,10 @@ for (let i = 0; i <=palindromoA.length-1; i++) {
     }else{compResult.push(0)
     }
     }
-console.log(compResult.reduce((a,b)=>a+b));
-console.log(palindrome.length);
 let alerta=compResult.reduce((a,b)=>a+b);
 if (alerta/palindromoA.length===1) {
     alert("La frase que ingraste es un palíndromo")
 }else{alert("La frase que ingraste no es un palíndromo")}
-console.log(compResult)
-console.log(palindrome.length)
 }
 console.log(verificarPalindromo(palindromo));
 
