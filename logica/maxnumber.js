@@ -18,3 +18,4 @@ for(i=0;i<=9;i++){
 intArray.sort((a,b)=>b-a);
 
 alert(`El número más grande entre los valores proporcionados es el ${intArray.shift()}`);
+
