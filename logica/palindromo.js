@@ -7,17 +7,18 @@ let palindromo = prompt("Introduce una frase para verificar si es un palíndromo
 function verificarPalindromo(palindrome) {
     
 let palindromoA = palindrome.toUpperCase()
-const palindromoB = palindromoA.replace(/[^\w\s`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]\s+/gi,'');
-let palindromoC = palindromoB.replace(/\s+/g, '');
-console.log(palindromoC);
+palindromoA=palindromoA.normalize("NFD")                     // Separa las letras de sus tildes
+palindromoA=palindromoA.replace(/[\u0300-\u036f]/g, "")     // Elimina los signos diacríticos
+palindromoA=palindromoA.replace(/[^a-zA-Z]/g, "")
+console.log(palindromoA);
 
-let palindromoArray = Array.from(palindromoC);
+let palindromoArray = Array.from(palindromoA);
 const arrayComparacion = [];
 const compResult = [];
-for (let i = 0; i <=palindromoC.length-1; i++) {
+for (let i = 0; i <=palindromoA.length-1; i++) {
     arrayComparacion.unshift(palindromoArray[i])
     }
-for (let i = 0; i <=palindromoC.length-1; i++) {
+for (let i = 0; i <=palindromoA.length-1; i++) {
     if (arrayComparacion[i]===palindromoArray[i]) {
         compResult.push(1)
     }else{compResult.push(0)
@@ -26,7 +27,7 @@ for (let i = 0; i <=palindromoC.length-1; i++) {
 console.log(compResult.reduce((a,b)=>a+b));
 console.log(palindrome.length);
 let alerta=compResult.reduce((a,b)=>a+b);
-if (alerta/palindromoC.length===1) {
+if (alerta/palindromoA.length===1) {
     alert("La frase que ingraste es un palíndromo")
 }else{alert("La frase que ingraste no es un palíndromo")}
 console.log(compResult)
